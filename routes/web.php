@@ -45,3 +45,6 @@ Route::post('eExpense', [App\Http\Controllers\AdminController::class, 'eExpense'
 Route::get('viewSale', [App\Http\Controllers\AdminController::class, 'viewSale']);
 Route::get('viewSaleHeader', [App\Http\Controllers\AdminController::class, 'viewSaleHeader']);
 Route::post('hardwareFilter', [App\Http\Controllers\AdminController::class, 'filterMpesa']);
+Route::get ('quote', [App\Http\Controllers\AdminController::class, 'quote']);
+Route::get('CalTotal', [App\Http\Controllers\AdminController::class, 'CalTotal']);
+Route::get('receiptFooter', [App\Http\Controllers\AdminController::class, 'receiptFooter']);

@@ -35,14 +35,14 @@
 
                                     <div class="container">
                                         <header class="center">
-                                            <h4>Siwamu Hardware</h4>
+                                            <h4>Icons Computer Shop</h4>
                                         </header>
                                         <section>
                                             <table class="summary" cellspacing="0">
                                                 <tbody>
                                                 <tr>
-                                                    <td>Paybill No</td>
-                                                    <td>247247</td>
+                                                    <td>Till No</td>
+                                                    <td>000798</td>
                                                 </tr>
                                                 <tr>
                                                     <td>A/C No</td>
@@ -51,7 +51,7 @@
                                                 <tr></tr>
                                                 <tr>
                                                     <td>Contact</td>
-                                                    <td>0790436545, 0728930978, 0714395000</td>
+                                                    <td>0727995279, 0734421552</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -125,6 +125,9 @@
                                                 </tr>
                                                 </tbody>
                                             </table>
+                                            <div id="paymentMeth">
+
+                                            </div>
                                             <div class="separator"></div>
                                         </section>
                                     </div>
@@ -313,6 +316,10 @@
                     <input type="text" class="form-control" id="phone">
                     <div class="field-placeholder">Phone Number</div>
                 </div>
+                <div class="field-wrapper">
+                    <input type="text" class="form-control" id="name">
+                    <div class="field-placeholder">Name</div>
+                </div>
                 <div class="field-wrapper" id="amount">
                     <input type="text" value="{{\App\Models\Sell::sum('total')}}" class="form-control" required>
                     <div class="field-placeholder">Amount</div>
@@ -323,7 +330,6 @@
                     </div>
                     <div class="field-placeholder">Date</div>
                 </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -434,13 +440,46 @@
         $phone = $('#phone').val();
         $amount = $('#amount').val();
         $date = $('#date').val();
+        $name = $('#name').val();
         $.ajax({
             type:"get",
             url:"{{url('sale')}}",
-            data:{'paymentMethod':$paymentMethod,'phone':$phone,'amount':$amount,'date':$date},
+            data:{'paymentMethod':$paymentMethod,'phone':$phone,'amount':$amount,'date':$date,'name':$name},
             success:function (data) {
-                alert('ok');
-                location.reload();
+                $('#returnPrint').html(data);
+                $.ajax({
+                    type:"get",
+                    url:"{{url('CalTotal')}}",
+                    success:function (data) {
+                        $('#calTotal').html(data);
+                        $.ajax({
+                            type:"get",
+                            url:"{{url('receiptFooter')}}",
+                            success:function (data) {
+                                $('#paymentMeth').html(data);
+                                var printContents = document.getElementById('printDiv').innerHTML;
+                                var originalContents = document.body.innerHTML;
+
+                                document.body.innerHTML = printContents;
+
+                                window.print();
+
+                                document.body.innerHTML = originalContents;
+                                location.reload();
+
+                            },
+                            error:function (error) {
+                                console.log(error)
+                                alert('error')
+                            }
+                        });
+                    },
+                    error:function (error) {
+                        console.log(error)
+                        alert('error')
+                    }
+                });
+
             },
             error:function (error) {
                 console.log(error)

@@ -145,4 +145,55 @@ class AdminController extends Controller
         }
 
     }
+    public function quote(){
+        return view('admin.quote');
+    }
+    public function CalTotal(Request $request){
+        $output = "";
+        $getLatestOrder = Order::latest('id')->first();
+        $total = Sale::where('order_id',$getLatestOrder->id)->sum('total');
+        $output = '
+          <td></td>
+                                                        <td class="payment"><h3>Ksh '.$total.'</h3></td>
+        ';
+        return response($output);
+    }
+    public function receiptFooter(Request $request){
+        $output = "";
+        $order = Order::latest('id')->first();
+        if ($order->payment_method==1){
+            $p = 'Mpesa';
+        }
+        else{
+            $p = 'Cash';
+
+        }
+        $output = '
+           <table class="summary" cellspacing="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>payment Method:</td>
+                                                        <td>'.$p.'</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="summary" cellspacing="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Name:</td>
+                                                        <td>'.$order->name.'</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="summary" cellspacing="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Phone No:</td>
+                                                        <td>'.$order->phone.'</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+        ';
+        return response($output);
+    }
 }

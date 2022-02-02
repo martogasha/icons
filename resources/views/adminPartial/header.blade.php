@@ -109,6 +109,9 @@
                                 <li>
                                         <a href="{{url('expense')}}">Expenses</a>
                                     </li>
+                                <li>
+                                        <a href="{{url('quote')}}">Quote</a>
+                                    </li>
 
                             </ul>
                         </div>

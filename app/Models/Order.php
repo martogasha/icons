@@ -11,6 +11,7 @@ class Order extends Model
     protected $fillable = [
         'phone',
         'payment_method',
+        'name',
         'total',
         'date'
     ];

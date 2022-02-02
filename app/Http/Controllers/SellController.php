@@ -67,12 +67,14 @@ class SellController extends Controller
         $updateStock = Stock::where('barcode',$del->barcode)->update(['quantity'=>$final]);
     }
     public function sale(Request $request){
+        $output = "";
         $sells = Sell::all();
         $sellTotal = $sells->sum('total');
         if (is_null($request->date)){
             $createOrder = Order::create([
                 'payment_method'=>$request->paymentMethod,
                 'phone'=>$request->phone,
+                'name'=>$request->name,
                 'amount'=>$request->amount,
                 'total'=>$sellTotal,
                 'date'=>Carbon::now()->format('Y-m-d'),
@@ -82,6 +84,7 @@ class SellController extends Controller
             $createOrder = Order::create([
                 'payment_method'=>$request->paymentMethod,
                 'phone'=>$request->phone,
+                'name'=>$request->name,
                 'amount'=>$request->amount,
                 'total'=>$sellTotal,
                 'date'=>$request->date,
@@ -102,6 +105,45 @@ class SellController extends Controller
                 ]);
                 $sell->delete();
             }
+            $receipts = Sale::where('order_id',$createOrder->id)->orderByDesc('id')->get();
+            foreach ($receipts as $receipt){
+                $output .='
+
+							     <tr>
+                                                    <td data-label="Account">'.$receipt->product_name.'</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td data-label="Due Date">'.$receipt->quantity.'</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td data-label="Amount">'.$receipt->selling_price.'</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td data-label="Amount">'.$receipt->total.'</td>
+                                                </tr>
+
+        ';
+            }
+
+            return response($output);
         }
         else{
             foreach ($sells as $sell){
@@ -119,6 +161,45 @@ class SellController extends Controller
                 $sell->delete();
 
             }
+            $receipts = Sale::where('order_id',$createOrder->id)->orderByDesc('id')->get();
+            foreach ($receipts as $receipt){
+                $output .='
+
+							     <tr>
+                                                    <td data-label="Account">'.$receipt->product_name.'</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td data-label="Due Date">'.$receipt->quantity.'</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td data-label="Amount">'.$receipt->selling_price.'</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td data-label="Amount">'.$receipt->total.'</td>
+                                                </tr>
+
+        ';
+            }
+
+            return response($output);
         }
 
     }

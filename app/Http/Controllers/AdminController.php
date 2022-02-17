@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expense;
 use App\Models\Order;
 use App\Models\Sale;
+use App\Models\Stock;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -195,5 +196,20 @@ class AdminController extends Controller
                                                 </table>
         ';
         return response($output);
+    }
+    public function deleteStock(Request $request){
+        $output = "";
+        $stockId = Stock::find($request->id);
+        $output = '
+            <input type="hidden" value="'.$stockId->id.'" name="stockId">
+            <div class="modal-title h4">ARE YOU SURE</div> <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+
+        ';
+        return response($output);
+    }
+    public function dStock(Request $request){
+        $delete = Stock::find($request->stockId);
+        $delete->delete();
+        return redirect()->back()->with('success','PRODUCT DELETED SUCCESS');
     }
 }

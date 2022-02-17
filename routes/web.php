@@ -48,3 +48,5 @@ Route::post('hardwareFilter', [App\Http\Controllers\AdminController::class, 'fil
 Route::get ('quote', [App\Http\Controllers\AdminController::class, 'quote']);
 Route::get('CalTotal', [App\Http\Controllers\AdminController::class, 'CalTotal']);
 Route::get('receiptFooter', [App\Http\Controllers\AdminController::class, 'receiptFooter']);
+Route::get('deleteStock', [App\Http\Controllers\AdminController::class, 'deleteStock']);
+Route::post('dStock', [App\Http\Controllers\AdminController::class, 'dStock']);

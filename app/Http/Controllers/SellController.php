@@ -84,7 +84,6 @@ class SellController extends Controller
             $createOrder = Order::create([
                 'payment_method'=>$request->paymentMethod,
                 'phone'=>$request->phone,
-                'name'=>$request->name,
                 'amount'=>$request->amount,
                 'total'=>$sellTotal,
                 'date'=>$request->date,

@@ -13,6 +13,6 @@ class Order extends Model
         'phone',
         'payment_method',
         'total',
-        'date'
+        'date',
     ];
 }

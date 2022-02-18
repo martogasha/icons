@@ -41,7 +41,7 @@
                                             <table class="summary" cellspacing="0">
                                                 <tbody>
                                                 <tr>
-                                                    <td>Icons delivers ICT Consultancy, CCTV Camera Installation, Data Recovery, Web designs, Business Systems, Networking, Biometric access control systems and Maintenance Services.</td>
+                                                    <p>Icons delivers ICT Consultancy, CCTV Camera Installation, Data Recovery, Web designs, Business Systems, Networking, Biometric access control systems and Maintenance Services.</p>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -90,7 +90,6 @@
 
                                                 </tbody>
                                             </table>
-                                            <div class="separator"></div>
                                             <div class="separator"></div>
                                             <table class="summary" cellspacing="0">
                                                 <tbody>

@@ -300,10 +300,6 @@
                     <input type="text" class="form-control" id="phone">
                     <div class="field-placeholder">Phone Number</div>
                 </div>
-                <div class="field-wrapper">
-                    <input type="text" class="form-control" id="name">
-                    <div class="field-placeholder">Name</div>
-                </div>
                 <div class="field-wrapper" id="amount">
                     <input type="text" value="{{\App\Models\Sell::sum('total')}}" class="form-control" required>
                     <div class="field-placeholder">Amount</div>

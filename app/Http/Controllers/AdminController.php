@@ -181,14 +181,6 @@ class AdminController extends Controller
                                                 <table class="summary" cellspacing="0">
                                                     <tbody>
                                                     <tr>
-                                                        <td>Name:</td>
-                                                        <td>'.$order->name.'</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table class="summary" cellspacing="0">
-                                                    <tbody>
-                                                    <tr>
                                                         <td>Phone No:</td>
                                                         <td>'.$order->phone.'</td>
                                                     </tr>

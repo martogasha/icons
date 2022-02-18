@@ -41,7 +41,7 @@
                                             <table class="summary" cellspacing="0">
                                                 <tbody>
                                                 <tr>
-                                                    <p style="font-size: 10px">CCTV Camera Installation, Web designs, Business Systems, Networking, Biometric access control systems and Maintenance Services.</p>
+                                                    <td style="font-size: 10px">CCTV Camera Installation, Web designs, Business Systems, Networking, Biometric access control systems and Maintenance Services.</td>
                                                 </tr>
                                                 </tbody>
                                             </table>

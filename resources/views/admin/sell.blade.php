@@ -41,17 +41,7 @@
                                             <table class="summary" cellspacing="0">
                                                 <tbody>
                                                 <tr>
-                                                    <td>Till No</td>
-                                                    <td>000798</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>A/C No</td>
-                                                    <td>0714399377</td>
-                                                </tr>
-                                                <tr></tr>
-                                                <tr>
-                                                    <td>Contact</td>
-                                                    <td>0727995279, 0734421552</td>
+                                                    <td>Icons delivers ICT Consultancy, CCTV Camera Installation, Data Recovery, Web designs, Business Systems, Networking, Biometric access control systems and Maintenance Services.</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -101,13 +91,6 @@
                                                 </tbody>
                                             </table>
                                             <div class="separator"></div>
-                                            <table class="summary" cellspacing="0">
-                                                <tbody>
-                                                <tr>
-                                                    <td>Total TAX 16%</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
                                             <div class="separator"></div>
                                             <table class="summary" cellspacing="0">
                                                 <tbody>
@@ -121,7 +104,7 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>Served By:</td>
-                                                    <td>fgbvnfg fghf</td>
+                                                    <td>David Karanja</td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -132,7 +115,7 @@
                                         </section>
                                     </div>
                                     <p>Thank you for your service</p>
-                                    <p>www.iconztech.com</p>
+                                    <p>0727995279, 0734421552</p>
 
                                     <style>
                                         .container {

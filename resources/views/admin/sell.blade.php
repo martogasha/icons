@@ -41,7 +41,7 @@
                                             <table class="summary" cellspacing="0">
                                                 <tbody>
                                                 <tr>
-                                                    <p>Icons delivers ICT Consultancy, CCTV Camera Installation, Data Recovery, Web designs, Business Systems, Networking, Biometric access control systems and Maintenance Services.</p>
+                                                    <p>CCTV Camera Installation, Web designs, Business Systems, Networking, Biometric access control systems and Maintenance Services.</p>
                                                 </tr>
                                                 </tbody>
                                             </table>

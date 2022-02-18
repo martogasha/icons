@@ -296,10 +296,6 @@
                     </select>
                     <div class="field-placeholder">Payment Method</div>
                 </div>
-                <div class="field-wrapper" id="phon">
-                    <input type="text" class="form-control" id="phone">
-                    <div class="field-placeholder">Phone Number</div>
-                </div>
                 <div class="field-wrapper" id="amount">
                     <input type="text" value="{{\App\Models\Sell::sum('total')}}" class="form-control" required>
                     <div class="field-placeholder">Amount</div>

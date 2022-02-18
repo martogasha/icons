@@ -178,14 +178,7 @@ class AdminController extends Controller
                                                     </tr>
                                                     </tbody>
                                                 </table>
-                                                <table class="summary" cellspacing="0">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Phone No:</td>
-                                                        <td>'.$order->phone.'</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
+
         ';
         return response($output);
     }

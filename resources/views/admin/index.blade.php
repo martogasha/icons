@@ -247,7 +247,7 @@
                         </div>
                         <div class="sale-details">
                             <h2>ksh {{$dailyProfit}}</h2>
-                            <p>PROFIT</p>
+                            <p>TODAY'S PROFIT</p>
                         </div>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
                         </div>
                         <div class="sale-details">
                             <h2>Ksh {{$dailySales}}</h2>
-                            <p>SALES</p>
+                            <p>TODAY'S SALES</p>
                         </div>
 
                     </div>
@@ -270,7 +270,7 @@
                         </div>
                         <div class="sale-details">
                             <h2>Ksh {{$dailyExpense}}</h2>
-                            <p>EXPENSE</p>
+                            <p>TODAY'S EXPENSE</p>
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,7 @@
                                         <i class="icon-download"></i>
                                     </button>
                                 </div>
-                                <div id="printDiv" style="width: 500px">
+                                <div id="printDiv">
 
                                     <div class="container">
                                         <header class="center">

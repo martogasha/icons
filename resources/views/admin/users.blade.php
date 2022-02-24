@@ -34,11 +34,9 @@
                                             <td>{{$user->last_name}}</td>
                                             <td>{{$user->phone}}</td>
                                             @if($user->role==1)
-                                            <td>Hotel</td>
-                                            @elseif($user->role==0)
-                                                <td>Admin</td>
+                                            <td>User</td>
                                             @else
-                                                <td>Hardware</td>
+                                                <td>Admin</td>
 
                                             @endif
                                             <td>

@@ -306,6 +306,9 @@
                     </div>
                     <div class="field-placeholder">Date</div>
                 </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" id="exp" value="1"> 30% Expense</label>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -417,10 +420,11 @@
         $amount = $('#amount').val();
         $date = $('#date').val();
         $name = $('#name').val();
+        $exp = $('#exp').val();
         $.ajax({
             type:"get",
             url:"{{url('sale')}}",
-            data:{'paymentMethod':$paymentMethod,'phone':$phone,'amount':$amount,'date':$date,'name':$name},
+            data:{'paymentMethod':$paymentMethod,'phone':$phone,'amount':$amount,'date':$date,'name':$name,'exp':$exp},
             success:function (data) {
                 $('#returnPrint').html(data);
                 $.ajax({
